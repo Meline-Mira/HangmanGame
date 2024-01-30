@@ -22,3 +22,16 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\Service\DictionaryWordChooser:
+        arguments:
+            $path: 'https://www.apprendre-en-ligne.net/pj/pendu/dico.txt'
+    App\Service\ConstantWordChooser:
+        arguments:
+            $word: 'swan'
+    App\Interfaces\WordChooserInterface: '@App\Service\DictionaryWordChooser'
+    App\Service\DictionaryWordsChooser:
+        arguments:
+            $path: 'https://www.apprendre-en-ligne.net/pj/pendu/dico.txt'
+    App\Interfaces\WordsChooserInterface: '@App\Service\DictionaryWordsChooser'
+    App\Interfaces\HangmanGameInterface: '@App\Game\EvilHangmanGame'
