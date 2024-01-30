@@ -8,7 +8,7 @@ use App\Game\NormalHangmanGame;
 
 class NormalHangmanGameTest extends TestCase
 {
-    public function testNormalHangmanGameLoose()
+    public function testNormalHangmanGameLose()
     {
         $game = new NormalHangmanGame(new ConstantWordChooser('MAMAN'));
 
